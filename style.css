@@ -10,10 +10,14 @@ header {
   color: black;
   font-style: italic;
   
-  
+}
+.headertextShopFrom{
+  padding-left: 5px;
+  font-family: Georgia;
+
 }
 .headerTextNick {
-  font-style:initial;
+  font-family: Impact;
   font-weight: bold;
   font-size: 1.8rem;
   color: rgb(34, 108, 206);
@@ -74,31 +78,11 @@ main {
   width: 75%;
   height: 75%;
 }
-/* footer{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  border: 1px solid white;
-  grid-row-start: 5;
-  grid-row-end: 6;
-  background-color: rgba(87, 123, 139, 0.911);
-  color: white;
-  font-size: 1.3rem;
-  padding-left: 10px;
-  min-height: 15vh;
-  max-height: 15vh;
-  text-align: center;
-  
-} */
 .black{
   color: black;
   background-color: black;
 }
 
-.headertextShopFrom{
-  padding-left: 5px;
-  
-
-}
 .navUL{
   list-style: none;
   display: inline-flex;
