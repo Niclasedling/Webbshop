@@ -8,7 +8,7 @@ var app = new Vue
     },
     data: {
         shop: [],
-        firstpageShow: this.filtredItem,
+        firstpageShow: this.filtredItem(),
         page: 'Home'
     },
     
@@ -35,7 +35,7 @@ var app = new Vue
     const appComponent = Vue.component('showonFirstpage', {
         data: function (){
             return {
-                showOnPage: app.shop
+                showOnPage: app.firstpageShow
                 
             }
         },

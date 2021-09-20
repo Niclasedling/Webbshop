@@ -26,12 +26,12 @@
         <main>
             <div v-if="page === 'Home'" class="cart">
                 <showonFirstpage></showonFirstpage>
-                <!-- <div class="frame" v-for="products in shop" >
+                <div class="frame" v-for="products in shop" >
                     <img class="imgclass" v-bind:src=products.Img>
                     <p class="cartText">{{products.Title}}</p>
                     <p class ="cartText">{{products.Type}}</p>
                     <p class="cartText">{{products.Price}}kr<button class="btn">Köp</button></p>
-                    </div> -->
+                    </div>
             </div>
             <div v-if="page === 'Products'" class="cart">
             </div>
