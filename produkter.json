@@ -1,0 +1,52 @@
+{
+  "shop": [
+    {
+      "ID": "812901e7-ff9d-4ac5-bf1c-e9939fceb3e7",
+      "Title": "Nike",
+      "Price": 269,
+      "Type": "T-shirt",
+      "Img": "https://img01.ztat.net/article/spp-media-p1/e0248edfa3bd4202a4f91a7fc40eac3c/b6822106f7444815839c1338fc9a8e93.jpg?imwidth=1800&filter=packshot",
+      "showOnFirstPage": false
+    },
+    {
+      "ID": "d269e723-416a-4742-85ea-0ded0d79d555",
+      "Title": "Diesel",
+      "Price": 399,
+      "Type": "T-Shirt",
+      "Img": "https://img01.ztat.net/article/spp-media-p1/f18cc419b40e4ed484dc3d1390f8eccf/bbc377abf6bc4583bf2dd4063204f920.jpg?imwidth=1800&filter=packshot",
+      "showOnFirstPage": true
+    },
+    {
+      "ID": "b6354bbf-4772-4ffe-8950-d36efac3f70f",
+      "Title": "Frank Dandy",
+      "Price": 99,
+      "Type": "Underwear",
+      "Img": "https://images.afound.com/images/a2a8e684-14d7-4cba-821a-a1ffb8927327/dfb56572704046679bceb55113233d95.jpg?preset=product-details-desktop",
+      "showOnFirstPage": false
+    },
+    {
+      "ID": "1ebcb2b6-9a25-4827-aebf-f74c51d48913",
+      "Title": "Calvin Klein",
+      "Price": 75,
+      "Type": "Underwear",
+      "Img": "https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/0000U2662G_998_alternate6?$main$",
+      "showOnFirstPage": true
+    },
+    {
+      "ID": "073a3dd1-8b48-401d-9421-5216352b1b44",
+      "Title": "Levis",
+      "Price": 1199,
+      "Type": "Jeans",
+      "Img": "https://junkyard.imgix.net/globalassets/productimages/7262149_552_f_f_levis_stayloose_q1_junkyard.jpg?auto=format&ar=4:5&fit=crop&w=2000",
+      "showOnFirstPage": true
+    },
+    {
+      "ID": "71e6bdb1-a97b-4457-b455-292228db4f26",
+      "Title": "Levis",
+      "Price": 689,
+      "Type": "Jeans",
+      "Img": "https://img01.ztat.net/article/spp-media-p1/f9e9d85795cc491a8a0a1cbc1afc94d9/1933028749f3430a8d10c2572586d771.jpg?imwidth=1800&filter=packshot",
+      "showOnFirstPage": false
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="components">
+        <header>
+            <p class="headertextShopFrom">shopfrom<span class="headerTextNick">Nick.</span></p>
+        </header>
+        <nav>
+            <ul class="navUL">
+                <li class="navLi" v-on:click="changepage('Home'); ">Home</li>
+                <li class="navLi" v-on:click="changepage('Products')">Products</li>
+                <li class="navLi" v-on:click="changepage('Cart')">Cart</li>
+            </ul>
+        </nav>
+        <main>
+            <div v-if="page === 'Home'" class="cart">
+                <showonFirstpage></showonFirstpage>
+                <div class="frame" v-for="products in shop" >
+                    <img class="imgclass" v-bind:src=products.Img>
+                    <p class="cartText">{{products.Title}}</p>
+                    <p class ="cartText">{{products.Type}}</p>
+                    <p class="cartText">{{products.Price}}<button class="btn">Köp</button></p>
+                    </div>
+            </div>
+            <div v-if="page === 'Products'" class="cart">
+            </div>
+            <div v-if="page === 'Cart'" class="cart">
+                <p>Cart</p>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>

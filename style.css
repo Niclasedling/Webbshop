@@ -1,0 +1,172 @@
+
+header {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  max-height: 6vh;
+  background-color: white;
+  font-size: 1.3rem;
+  color: black;
+  font-style: italic;
+  
+  
+}
+.headerTextNick {
+  font-style:initial;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: rgb(34, 108, 206);
+}
+nav{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color:white;
+  color: black;
+  border-top: 1px solid black;
+  
+  font-size: 1rem;
+  min-height: 3vh;
+  max-height: 4vh;
+  text-align: center;
+}
+main {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  min-height: 1500px;
+  background-color: rgba(28, 56, 68, 0.911);
+  color: white;
+  padding: 1px;
+  font-size: 1.3rem;
+  
+}
+.cart{
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-evenly;
+  
+}
+.frame {
+  border-radius: 10px ;
+  background-color: rgb(7, 29, 39);
+  width: 18%;
+  padding-top: 35px;
+  padding-left: 5px;
+  margin-bottom: 45px;
+  margin-left: 45px;
+  justify-content: space-evenly;
+
+}
+.cartText{
+  margin: 0;
+  text-align: left;
+  padding-left: 40px;
+  /* padding-right: 150px; */
+}
+.btn{
+  margin-left: 165px;
+}
+.imgclass{
+  width: 75%;
+  height: 75%;
+}
+/* footer{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border: 1px solid white;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  background-color: rgba(87, 123, 139, 0.911);
+  color: white;
+  font-size: 1.3rem;
+  padding-left: 10px;
+  min-height: 15vh;
+  max-height: 15vh;
+  text-align: center;
+  
+} */
+.black{
+  color: black;
+  background-color: black;
+}
+
+.headertextShopFrom{
+  padding-left: 5px;
+  
+
+}
+.navUL{
+  list-style: none;
+  display: inline-flex;
+  padding-bottom: 5px;
+  margin: 5px 5px 5px 5px;
+  
+}
+.navLi {
+    
+  margin: auto 70px 0px 20px;
+  
+    
+}
+.ULproducts {
+  list-style: none;
+  padding-right: 20px;
+  padding-left: 0px;
+  justify-content: center;
+  text-align: center;
+  margin-left: 25px;
+}
+.productsLi {
+  margin: auto auto 20px auto ;
+  border: 1px solid black;
+  
+}
+
+
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 0;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border: solid green;
+  
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+/* .dropdown-content a:hover {background-color: #ddd;} */
+
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-content {display: block;} */
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
