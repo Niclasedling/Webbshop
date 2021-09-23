@@ -18,28 +18,42 @@
         </header>
         <nav>
             <ul class="navUL">
-                <li class="navLi" v-on:click="changepage('Home'); ">Home</li>
-                <li class="navLi" v-on:click="changepage('Products')">Products</li>
-                <li class="navLi" v-on:click="changepage('Cart')">Cart</li>
+                <li class="navHome" v-on:click="changepage('Home'); ">
+                    <p class="styletext">Home</p>
+                </li>
+                <div class="dropdown">
+                    <li class="navProduct">
+                        <p class="dropdownmenu">Products</p>
+                    </li>
+                    <div class="dropdown-content">
+                        <a href="#"  v-on:click="changepage('T-shirts')">T-shirts</a>
+                        <a href="#"  v-on:click="changepage('Underwear')">Underwear</a>
+                        <a href="#"  v-on:click="changepage('Jeans')">Jeans</a>
+                    </div>
+                </div>
+                <li class="navCart" v-on:click="changepage('Cart')">
+                    <p class="styletext">Cart</p>
+                </li>
             </ul>
         </nav>
-        <main>
-            <div v-if="page === 'Home'" class="cart">
-                <showonFirstpage></showonFirstpage>
-                <div class="frame" v-for="products in shop" >
-                    <img class="imgclass" v-bind:src=products.Img>
-                    <p class="cartText">{{products.Title}}</p>
-                    <p class ="cartText">{{products.Type}}</p>
-                    <p class="cartText">{{products.Price}}kr<button class="btn">Köp</button></p>
-                    </div>
+        <main v-if="!loading">
+            <div v-if="page === 'Home'">
+                <Firstpage></Firstpage>
             </div>
-            <div v-if="page === 'Products'" class="cart">
+            <div v-if="page === 'T-shirts'">
+                <Shirts></Shirts>
+            </div>
+            <div v-if="page === 'Underwear'">
+                <Underwear></Underwear>
+            </div>
+            <div v-if="page === 'Jeans'">
+                <Jeans></Jeans>
             </div>
             <div v-if="page === 'Cart'" class="cart">
-                <p>Cart</p>
+                <cartitems></cartitems>
             </div>
         </main>
-        <script  src="script.js"></script>
+        <script src="script.js"></script>
     </div>
 </body>
 
