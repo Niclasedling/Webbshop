@@ -26,7 +26,7 @@ Vue.component('Firstpage',
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
             totalCost += itemMatch.Price;
-            console.log(totalCost)
+            console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
     },
@@ -91,7 +91,7 @@ Vue.component('Shirts',
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
             totalCost += itemMatch.Price;
-            console.log(totalCost)
+            console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
     },
@@ -126,7 +126,7 @@ Vue.component('Jeans',
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
             totalCost += itemMatch.Price;
-            console.log(itemMatch.Price)
+            console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
     },
@@ -161,7 +161,7 @@ Vue.component('Underwear',
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
             totalCost += itemMatch.Price;
-            console.log(totalCost)
+            console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
     },
@@ -270,7 +270,7 @@ Vue.component('Admin',{
     },
     methods: {
         addNewItem: function() {
-            var objec = {
+            var obj = {
                 ID: '',
                 Title: '',
                 Price: '',
@@ -280,17 +280,16 @@ Vue.component('Admin',{
                 Quantity: '',
             }
 
-            objec.ID = getGUID();
-            objec.Title = this.Title;
-            objec.Price = this.Price;
-            objec.Description = this.Description;
-            objec.Type = this.Type;
-            objec.Img = this.Img;
-            objec.Quantity = this.Quantity;
+            obj.ID = getGUID();
+            obj.Title = this.Title;
+            obj.Price = this.Price;
+            obj.Description = this.Description;
+            obj.Type = this.Type;
+            obj.Img = this.Img;
+            obj.Quantity = this.Quantity;
 
             console.log('Item added')
-            console.log(objec.Price)
-            app.shop.push(objec);
+            app.shop.push(obj);
         },
     },
     template: '<div>'
@@ -301,7 +300,7 @@ Vue.component('Admin',{
                     + '</div>'
                     + '<div class="Cart-Items">'
                     + '<div class="cart-image-box">'
-                    + ' <label  class="admin-title" for="Title">Add title</label>'
+                    + ' <label  class="admin-title" for="Title">Title</label>'
                     + '<input type="text" id="Title" v-model="Title" >'
                     + '<label class="admin-title" for="Title">Price</label>'
                     + '<input type="text" id="Price"  v-model="Price" >'
@@ -320,7 +319,7 @@ Vue.component('Admin',{
                     + '<div class="checkout">'
                     + '<div class="total">'
                     + '</div>'
-                    + '<button class="cart-button" v-on:click="addNewItem()">Submit</button>'
+                    + '<button class="cart-button" v-on:click="addNewItem()">Add item</button>'
                     + '</div>'
                     + '</div>'
                     + '</div></div>'
