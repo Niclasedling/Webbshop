@@ -32,22 +32,11 @@ Vue.component('Firstpage',
     },
     template: '<div class="cart">'
         + '<div class="frame" v-for="products in showOnPage" >'
-        // + '<button data-modal-target="#modal">Open Modal</button>'
         + '<img class="imgclass" v-bind:src=products.Img>'
         + '<p class="frameText">{{products.Title}}</p>'
         + '<p class ="frameText">{{products.Type}}</p>'
-        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button></p>'
+        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-if="products.Quantity > 0" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button><button class="btn" v-else="prodcuts.Quantity = 0">Varan är slut</button></p>'
         + '<p class="frameText">Qty:{{products.Quantity}}</p>'
-        + '<div class="modal" id="modal">'
-        + '<div class="modal-header">'
-        + ' <div class="titel">Exempel Modal</div>'
-        + ' <button data-close-button class="close-button">&times;</button>'
-        + '</div>'
-        + '<div class="modal-body">'
-        + ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quasi quas tempora eius molestiae debitis asperiores nihil, veniam, neque facere incidunt cupiditate sapiente quae nam repellat quos, suscipit optio? Ullam illo excepturi exercitationem ad sit expedita error nulla maxime porro similique aliquam voluptas, fuga dignissimos sunt cupiditate provident fugiat, nesciunt, laboriosam impedit a optio eum eveniet. Consequatur voluptate reiciendis atque eveniet laboriosam modi, commodi harum molestias earum dolorem et adipisci dicta aliquam natus minima inventore cumque assumenda dolorum aut facilis?'
-            + '</div>'
-            + ' </div>'
-            + '<div id="overlay"></div>'
         + '</div>'
         + '</div>'
 })
@@ -97,10 +86,12 @@ Vue.component('Shirts',
         getItem: function(ID){
             let itemMatch = app.shop.find(item => item.ID === ID);
             this.itemlist.push(itemMatch)
-            quantity ++;
-            totaltquantity ++;
-            totalCost += itemMatch.Price;
             console.log(this.itemlist)
+            totaltquantity ++;
+            itemMatch.Quantity --;
+            console.log(itemMatch.Quantity)
+            totalCost += itemMatch.Price;
+            console.log(totalCost)
             console.log('Tillagd')
         }
     },
@@ -109,7 +100,8 @@ Vue.component('Shirts',
         + '<img class="imgclass" v-bind:src=products.Img>'
         + '<p class="frameText">{{products.Title}}</p>'
         + '<p class ="frameText">{{products.Type}}</p>'
-        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button></p>'
+        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-if="products.Quantity > 0" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button><button class="btn" v-else="prodcuts.Quantity = 0">Varan är slut</button></p>'
+        + '<p class="frameText">Qty:{{products.Quantity}}</p>'
         + '</div>'
         + '</div>'
 })
@@ -129,10 +121,12 @@ Vue.component('Jeans',
         getItem: function(ID){
             let itemMatch = app.shop.find(item => item.ID === ID);
             this.itemlist.push(itemMatch)
-            quantity ++;
-            totaltquantity ++;
-            totalCost += itemMatch.Price;
             console.log(this.itemlist)
+            totaltquantity ++;
+            itemMatch.Quantity --;
+            console.log(itemMatch.Quantity)
+            totalCost += itemMatch.Price;
+            console.log(itemMatch.Price)
             console.log('Tillagd')
         }
     },
@@ -141,7 +135,8 @@ Vue.component('Jeans',
         + '<img class="imgclass" v-bind:src=products.Img>'
         + '<p class="frameText">{{products.Title}}</p>'
         + '<p class ="frameText">{{products.Type}}</p>'
-        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button></p>'
+        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-if="products.Quantity > 0" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button><button class="btn" v-else="prodcuts.Quantity = 0">Varan är slut</button></p>'
+        + '<p class="frameText">Qty:{{products.Quantity}}</p>'
         + '</div>'
         + '</div>'
 })
@@ -161,8 +156,10 @@ Vue.component('Underwear',
         getItem: function(ID){
             let itemMatch = app.shop.find(item => item.ID === ID);
             this.itemlist.push(itemMatch)
-            quantity ++;
+            console.log(this.itemlist)
             totaltquantity ++;
+            itemMatch.Quantity --;
+            console.log(itemMatch.Quantity)
             totalCost += itemMatch.Price;
             console.log(totalCost)
             console.log('Tillagd')
@@ -173,7 +170,8 @@ Vue.component('Underwear',
         + '<img class="imgclass" v-bind:src=products.Img>'
         + '<p class="frameText">{{products.Title}}</p>'
         + '<p class ="frameText">{{products.Type}}</p>'
-        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button></p>'
+        + '<p class="frameText">{{products.Price}}kr<button class="btn" v-if="products.Quantity > 0" v-bind:key="products.ID" v-on:click="getItem(products.ID)">Add to cart</button><button class="btn" v-else="prodcuts.Quantity = 0">Varan är slut</button></p>'
+        + '<p class="frameText">Qty:{{products.Quantity}}</p>'
         + '</div>'
         + '</div>'
 })
@@ -187,9 +185,7 @@ Vue.component('cartitems',{
         removeItem: function(ID){
             let match = this.itemlist.find(item => item.ID === ID)
             this.itemlist.splice(match, 1)
-            quantity --;
             totaltquantity --;
-            let pricetoremove = match.Price
             totalCost -= match.Price;
             
             console.log(totalCost)
@@ -250,6 +246,84 @@ Vue.component('cartitems',{
      +'</div>'
     +'</div>'
     +'</div>'
+})
+function getGUID() {
+    var u = '', i = 0;
+    while (i++ < 36) {
+        var c = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'[i - 1],
+            r = Math.random() * 16 | 0,
+            v = c == 'x' ? r : (r & 0x3 | 0x8);
+        u += (c == '-' || c == '4') ? c : v.toString(16)
+    }
+    return u;
+}
+Vue.component('Admin',{
+    data: function(){
+        return {
+            Title: '',
+            Price: '',
+            Description: '',
+            Type: '',
+            Img: '',
+            Quantity: '',
+        }
+    },
+    methods: {
+        addNewItem: function() {
+            var objec = {
+                ID: '',
+                Title: '',
+                Price: '',
+                Description: '',
+                Type: '',
+                Img: '',
+                Quantity: '',
+            }
+
+            objec.ID = getGUID();
+            objec.Title = this.Title;
+            objec.Price = this.Price;
+            objec.Description = this.Description;
+            objec.Type = this.Type;
+            objec.Img = this.Img;
+            objec.Quantity = this.Quantity;
+
+            console.log('Item added')
+            console.log(objec.Price)
+            app.shop.push(objec);
+        },
+    },
+    template: '<div>'
+        + '<div class="cartBody">'
+                    + '<div class="Cart-Container">'
+                    + '<div class=Cart-Header>'
+                    + '<h3 class="Heading">Admin</h3>'
+                    + '</div>'
+                    + '<div class="Cart-Items">'
+                    + '<div class="cart-image-box">'
+                    + ' <label  class="admin-title" for="Title">Add title</label>'
+                    + '<input type="text" id="Title" v-model="Title" >'
+                    + '<label class="admin-title" for="Title">Price</label>'
+                    + '<input type="text" id="Price"  v-model="Price" >'
+                    + '<label class="admin-title" for="Title">Desciption</label>'
+                    + '<input type="text" id="Description"  v-model="Description" >'
+                    + '<label class="admin-title" for="Title">Type</label>'
+                    + '<input type="text" id="Type" v-model="Type">'
+                    + '<label class="admin-title" for="Title">Quantity</label>'
+                    + '<input type="text" id="Quantity" v-model="Quantity" >'
+                    + '<label class="admin-title" for="Title">Img</label>'
+                    + '<input type="text" id="Img" v-model="Img">'
+                    + '</div>'
+                    + '</div>'
+                    + '<br>'
+                    + '<hr>'
+                    + '<div class="checkout">'
+                    + '<div class="total">'
+                    + '</div>'
+                    + '<button class="cart-button" v-on:click="addNewItem()">Submit</button>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div></div>'
 })
 var app = new Vue
 ({

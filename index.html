@@ -22,6 +22,9 @@
                 <li class="navHome" v-on:click="changepage('Home'); ">
                     <p class="styletext">Home</p>
                 </li>
+                <li class="navAdmin" v-on:click="changepage('Admin'); ">
+                    <p class="styletext">Admin</p>
+                </li>
                 <div class="dropdown">
                     <li class="navProduct">
                         <p class="dropdownmenu">Products</p>
@@ -52,6 +55,9 @@
             </div>
             <div v-if="page === 'Cart'">
                 <cartitems></cartitems>
+            </div>
+            <div v-if="page ==='Admin'">
+                <Admin></Admin>
             </div>
     </div>
     </main>

@@ -78,15 +78,6 @@ main {
   float: left;
   display: inline-flex;
 }
-.headerItem1{
-  
-}
-.headerItem2{
-  
-}
-.headerItem3{
-  
-}
 .frameCart {
   display: inline-flex;
   justify-content: left;
@@ -125,7 +116,10 @@ main {
   
 }
 .navHome {
-  margin: 0px 100px 0px 0px;
+  margin: 0px 50px 0px 0px;
+}
+.navAdmin {
+  margin: 0px 50px 0px 0px;
 }
 .navProduct {
   margin: 0px 50px 0px 0px;
@@ -217,80 +211,100 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
- }
- .Cart-Container{
+}
+
+.Cart-Container{
   width: 70%;
   height: 85%;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 25px 40px #1687d933;
   overflow: auto;
- }
- .Cart-Header{
+}
+.Cart-Header{
   margin: auto;
   width: 90%;
   height: 15%;
   display: flex;
   justify-content: space-between;
   align-items: center;
- }
- .Heading{
+}
+
+.Heading{
   font-size: 20px;
   font-family: "Open Sans";
   font-weight: 700;
   color: black;
- }
- .Action{
+}
+
+.Action{
   font-size: 14px;
   font-family: "Open Sans";
   font-weight: 600;
   color: #E44C4C;
   cursor: pointer;
   border-bottom: 1px solid #E44C4C;
- }
- .Cart-Items{
+}
+
+.Cart-Items{
   margin: auto;
   width: 90%;
   height: 30%;
   display: flex;
   justify-content: space-between;
   align-items: center;
- }
- .cart-image-box{
+}
+
+.cart-image-box{
   width: 15%;
   text-align: center;
- }
- .cart-img1{
+}
+
+.cart-img1{
    height: 120px;
- }
- .cart-img2{
+}
+
+.cart-img2{
    height: 30px;
- }
- .cart-about{
+}
+
+.cart-about{
   height: 100%;
- }
- .cart-title{
+}
+
+.cart-title{
   padding-top: 5px;
   line-height: 10px;
   font-size: 32px;
   font-family: "Open Sans";
   font-weight: 800;
   color: #202020;
- }
- .cart-subtitle{
+}
+.admin-title{
+  padding-top: 5px;
+  line-height: 10px;
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: 800;
+  color: #202020;
+}
+
+.cart-subtitle{
   line-height: 10px;
   font-size: 18px;
   font-family: "Open Sans";
   font-weight: 600;
   color: #909090;
- }
- .cart-counter{
+}
+
+.cart-counter{
   width: 15%;
   display: flex;
   justify-content: space-between;
   align-items: center;
- }
- .cart-btn{
+}
+
+.cart-btn{
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -303,77 +317,89 @@ main {
   font-weight: 900;
   color: #202020;
   cursor: pointer;
- }
- .count{
+}
+
+.count{
   font-size: 20px;
   font-family: "Open Sans";
   font-weight: 900;
   color: #202020;
- }
- .prices{
+}
+
+.prices{
   height: 100%;
   text-align: right;
- }
- .amount{
+}
+
+.amount{
   padding-top: 20px;
   font-size: 26px;
   font-family: ‘Open Sans’;
   font-weight: 800;
   color: #202020;
- }
- .save{
+}
+
+.save{
   padding-top: 5px;
   font-size: 14px;
   font-family: ‘Open Sans’;
   font-weight: 600;
   color: #1687d9;
   cursor: pointer;
- }
- .remove{
+}
+
+.remove{
   padding-top: 5px;
   font-size: 14px;
   font-family: ‘Open Sans’;
   font-weight: 600;
   color: #E44C4C;
   cursor: pointer;
- }
- hr{
+}
+
+hr {
   width: 66%;
   float: right;
   margin-right: 5%;
- }
- .checkout{
+}
+
+.checkout{
   float: right;
   margin-right: 5%;
   margin-bottom: 2%;
   width: 28%;
 
- }
- .total{
+}
+
+.total{
   width: 100%;
   display: flex;
   justify-content: space-between;
- }
- .Subtotal{
+}
+
+.Subtotal{
   font-size: 22px;
   font-family: "Open Sans";
   font-weight: 700;
   color: #202020;
- }
- .items{
+}
+
+.items{
   font-size: 16px;
   font-family: "Open Sans";
   font-weight: 500;
   color: #909090;
   line-height: 10px;
- }
- .total-amount{
+}
+
+.total-amount{
   font-size: 36px;
   font-family: "Open Sans";
   font-weight: 900;
   color: #202020;
- }
- .cart-button{
+}
+
+.cart-button{
   margin-top: 5px;
   width: 100%;
   height: 40px;
@@ -385,9 +411,10 @@ main {
   font-family: "Open Sans";
   font-weight: 600;
   color: #202020;
- }
+}
 
- *,*::after, *::before {
+
+*,*::after, *::before {
   box-sizing: border-box;
 }
 
@@ -404,9 +431,11 @@ main {
   width: 500px;
   max-width: 80%;
 }
+
 .modal.active{
   transform: translate(-50%, -50%) scale(1);
 }
+
 .modal-header{
   padding: 10px 15px;
   display: flex;
@@ -419,6 +448,7 @@ main {
   font-size: 1.25rem;
   font-weight: bold;
 }
+
 .modal-header .close-button {
   cursor: pointer;
   border: none;
@@ -427,6 +457,7 @@ main {
   font-size: 1.25rem;
   font-weight: bold;
 }
+
 .modal-body {
   padding: 10px 15px
 }
