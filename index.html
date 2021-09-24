@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
@@ -26,9 +27,9 @@
                         <p class="dropdownmenu">Products</p>
                     </li>
                     <div class="dropdown-content">
-                        <a href="#"  v-on:click="changepage('T-shirts')">T-shirts</a>
-                        <a href="#"  v-on:click="changepage('Underwear')">Underwear</a>
-                        <a href="#"  v-on:click="changepage('Jeans')">Jeans</a>
+                        <a href="#" v-on:click="changepage('T-shirts')">T-shirts</a>
+                        <a href="#" v-on:click="changepage('Underwear')">Underwear</a>
+                        <a href="#" v-on:click="changepage('Jeans')">Jeans</a>
                     </div>
                 </div>
                 <li class="navCart" v-on:click="changepage('Cart')">
@@ -49,11 +50,12 @@
             <div v-if="page === 'Jeans'">
                 <Jeans></Jeans>
             </div>
-            <div v-if="page === 'Cart'" class="cart">
+            <div v-if="page === 'Cart'">
                 <cartitems></cartitems>
             </div>
-        </main>
-        <script src="script.js"></script>
+    </div>
+    </main>
+    <script src="script.js"></script>
     </div>
 </body>
 
