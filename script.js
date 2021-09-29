@@ -187,7 +187,7 @@ Vue.component('cartitems',{
             this.itemlist.splice(match, 1)
             totaltquantity --;
             totalCost -= parseInt(match.Price);
-            
+            match.Quantity ++
             console.log(totalCost)
 
         },
