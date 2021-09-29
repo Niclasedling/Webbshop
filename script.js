@@ -25,7 +25,7 @@ Vue.component('Firstpage',
             totaltquantity ++;
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
-            totalCost += itemMatch.Price;
+            totalCost += parseInt(itemMatch.Price);
             console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
@@ -90,7 +90,7 @@ Vue.component('Shirts',
             totaltquantity ++;
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
-            totalCost += itemMatch.Price;
+            totalCost += parseInt(itemMatch.Price);
             console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
@@ -125,7 +125,7 @@ Vue.component('Jeans',
             totaltquantity ++;
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
-            totalCost += itemMatch.Price;
+            totalCost += parseInt(itemMatch.Price);
             console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
@@ -160,7 +160,7 @@ Vue.component('Underwear',
             totaltquantity ++;
             itemMatch.Quantity --;
             console.log(itemMatch.Quantity)
-            totalCost += itemMatch.Price;
+            totalCost += parseInt(itemMatch.Price);
             console.log('TotalCost:' + totalCost)
             console.log('Tillagd')
         }
@@ -186,7 +186,7 @@ Vue.component('cartitems',{
             let match = this.itemlist.find(item => item.ID === ID)
             this.itemlist.splice(match, 1)
             totaltquantity --;
-            totalCost -= match.Price;
+            totalCost -= parseInt(match.Price);
             
             console.log(totalCost)
 
@@ -261,7 +261,7 @@ Vue.component('Admin',{
     data: function(){
         return {
             Title: '',
-            Price: '',
+            Price: 0,
             Description: '',
             Type: '',
             Img: '',
@@ -273,7 +273,7 @@ Vue.component('Admin',{
             var obj = {
                 ID: '',
                 Title: '',
-                Price: '',
+                Price: 0,
                 Description: '',
                 Type: '',
                 Img: '',
@@ -282,7 +282,7 @@ Vue.component('Admin',{
 
             obj.ID = getGUID();
             obj.Title = this.Title;
-            obj.Price = this.Price;
+            obj.Price = parseInt(this.Price);
             obj.Description = this.Description;
             obj.Type = this.Type;
             obj.Img = this.Img;
